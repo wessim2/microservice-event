@@ -1,6 +1,7 @@
 package com.example.eventservice.controllers;
 
 
+import com.example.eventservice.dto.categoryDto.CategoryDto;
 import com.example.eventservice.entities.Category;
 import com.example.eventservice.services.ICategoryService;
 import lombok.AllArgsConstructor;
@@ -20,13 +21,10 @@ public class CategoryController {
         _categoryService = categoryService;
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<Object> addCategory(@RequestBody Category request) {
+    @PostMapping("/create")
+    public ResponseEntity<Object> addCategory(@RequestBody CategoryDto request) {
         Category category = _categoryService.addCategory(request);
-        if(category != null) {
-            return new ResponseEntity<>(category, HttpStatus.CREATED);
-        }
-        return new ResponseEntity<>("This Category already exists",HttpStatus.CONFLICT);
+        return new ResponseEntity<>(category, HttpStatus.CREATED);
     }
 
     @GetMapping("")

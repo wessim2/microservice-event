@@ -1,7 +1,10 @@
 package com.example.eventservice.controllers;
 
+import com.example.eventservice.dto.ResponseDto;
+import com.example.eventservice.dto.eventDto.EventDto;
 import com.example.eventservice.entities.Event;
-import com.example.eventservice.services.EventService;
+import com.example.eventservice.services.IEventService;
+import com.example.eventservice.services.impl.EventService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,27 +12,28 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/event")
+@AllArgsConstructor
 public class EventController {
 
-    private final EventService eventService;
+    private final IEventService _eventService;
 
-    public EventController(EventService eventService) {
-        this.eventService = eventService;
-    }
+    @PostMapping("/create")
+    public ResponseEntity<ResponseDto> addEvent(@RequestBody EventDto request) {
+        _eventService.addEvent(request);
 
-    @PostMapping("/add")
-    public ResponseEntity<Object> addEvent(@RequestBody Event request) {
-        Event event = eventService.addEvent(request);
-        System.out.println(request.getCategory());
-        if(event != null) {
-            return new ResponseEntity<>(event, HttpStatus.CREATED);
-        }
-        return new ResponseEntity<>("An event with the same date or venue already exists", HttpStatus.CONFLICT);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new ResponseDto("201","Event created"));
     }
 
     @GetMapping("")
     public ResponseEntity<Object> getAllEvents() {
-        return new ResponseEntity<>(eventService.getAllEvents(), HttpStatus.OK);
+        return new ResponseEntity<>(_eventService.getAllEvents(), HttpStatus.OK);
     }
-
+    @GetMapping("/get")
+    public ResponseEntity<Event> getEvent(@RequestParam String name) {
+        Event event = _eventService.getEventByName(name);
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(event);
+    }
 }

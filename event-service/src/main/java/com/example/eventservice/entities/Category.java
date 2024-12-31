@@ -19,7 +19,7 @@ import java.util.UUID;
 @Entity
 public class Category {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
     @JsonIgnore
     @OneToMany(mappedBy = "category")

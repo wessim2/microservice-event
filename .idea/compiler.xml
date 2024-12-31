@@ -12,7 +12,7 @@
         <module name="discovery-service" />
         <module name="gateway-service" />
       </profile>
-      <profile name="Annotation profile for organizer-service" enabled="true">
+      <profile name="Annotation profile for ticket-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -20,6 +20,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="organizer-service" />
+        <module name="ticket-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -30,6 +31,7 @@
       <module name="event-service" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
       <module name="organizer-service" options="-parameters" />
+      <module name="ticket-service" options="-parameters" />
     </option>
   </component>
 </project>
