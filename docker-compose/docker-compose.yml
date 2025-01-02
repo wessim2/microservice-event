@@ -1,0 +1,43 @@
+services:
+  eventsdb:
+    image: mysql
+    container_name: eventsdb
+    ports:
+      - 3306:3306
+    healthcheck:
+      test: ["CMD","mysqladmin","ping","-h","localhost"]
+      timeout: 10s
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret
+      MYSQL_DATABASE: eventsdb
+    networks:
+      - mynetwork
+
+
+  configserver:
+    image: config-service:0.0.1-SNAPSHOT
+    container_name: configserver-ms
+    ports:
+      - "8071:8071"
+
+  events:
+    image: event-service:0.0.1-SNAPSHOT
+    container_name: event-ms
+    ports:
+      - "8085:8085"
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret
+      SPRING_APPLICATION_NAME: "events"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://eventsdb:3306/eventsdb"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    depends_on:
+      - eventsdb
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
