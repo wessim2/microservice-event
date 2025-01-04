@@ -1,6 +1,7 @@
 package com.example.eventservice.mapper.event;
 
 import com.example.eventservice.dto.eventDto.EventDto;
+import com.example.eventservice.dto.eventDto.EventResponse;
 import com.example.eventservice.entities.Event;
 
 public class EventMapper {
@@ -13,5 +14,14 @@ public class EventMapper {
         event.setVenue(eventDto.getVenue());
         event.setDate(eventDto.getDate());
         return event;
+    }
+
+    public static EventResponse mapToEventResponse(Event event) {
+        EventResponse eventResponse = new EventResponse();
+        eventResponse.setName(event.getName());
+        eventResponse.setDescription(event.getDescription());
+        eventResponse.setVenue(event.getVenue());
+        eventResponse.setDate(event.getDate());
+        return eventResponse;
     }
 }

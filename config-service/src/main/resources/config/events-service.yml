@@ -12,11 +12,7 @@ spring:
   sql:
     init:
       mode: always
-  cloud:
-    discovery:
-      enabled: false
-    config:
-      enabled: false
+
 
 server:
   port: 8085

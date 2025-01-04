@@ -8,8 +8,6 @@ import com.example.eventservice.mapper.event.EventMapper;
 import com.example.eventservice.repositories.EventRepository;
 import com.example.eventservice.services.IEventService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 
@@ -43,6 +41,13 @@ public class EventService implements IEventService {
     public Event getEventByName(String name) {
         return _eventRepository.findByNameIgnoreCase(name).orElseThrow(
                 ()-> new ResourceNotFoundException("Event","Name",name)
+        );
+    }
+
+    @Override
+    public Event getEventById(Long id) {
+        return _eventRepository.findById(id).orElseThrow(
+                ()-> new ResourceNotFoundException("Event","Id",id.toString())
         );
     }
 }

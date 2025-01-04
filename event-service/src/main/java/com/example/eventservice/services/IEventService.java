@@ -9,4 +9,5 @@ public interface IEventService {
     public Event addEvent(EventDto event);
     public List<Event> getAllEvents();
     public Event getEventByName(String name);
+    public Event getEventById(Long id);
 }
