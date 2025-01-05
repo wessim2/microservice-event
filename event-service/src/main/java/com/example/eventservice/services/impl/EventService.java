@@ -50,4 +50,16 @@ public class EventService implements IEventService {
                 ()-> new ResourceNotFoundException("Event","Id",id.toString())
         );
     }
+
+    @Override
+    public void linkEventToOrganizers(Long eventId, List<Long> organizerIds) {
+        Event event = _eventRepository.findById(eventId)
+                .orElseThrow(() -> new ResourceNotFoundException("Event not found","id",eventId.toString()));
+        for(Long organizerId : organizerIds) {
+            if(!event.getOrganizersId().contains(organizerId)) {
+                event.getOrganizersId().add(organizerId);
+            }
+        }
+        _eventRepository.save(event);
+    }
 }

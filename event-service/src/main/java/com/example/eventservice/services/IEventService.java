@@ -10,4 +10,5 @@ public interface IEventService {
     public List<Event> getAllEvents();
     public Event getEventByName(String name);
     public Event getEventById(Long id);
+    public void linkEventToOrganizers(Long eventId, List<Long> organizerIds);
 }

@@ -1,8 +1,6 @@
-package com.example.eventservice.dto.eventDto;
+package com.example.organizerservice.dto.event;
 
-import com.example.eventservice.entities.Category;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 import java.time.LocalDateTime;

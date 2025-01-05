@@ -4,52 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="246ca73e-1fd5-4879-b526-6b20bf84d50a" name="Changes" comment="add gateway">
-      <change afterPath="$PROJECT_DIR$/config-service/src/main/resources/config/discovery-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/dto/eventDto/EventResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/com/example/gatewayservice/config/KeycloakRoleConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/controllers/TicketController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/controllers/TicketTypeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/dto/ErrorResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/dto/ResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/dto/Ticket/CreateTicketsRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/dto/TicketType/CreateTicketTypeRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/dto/clients/EventResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/exceptions/GlobalException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/exceptions/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/mappers/TicketType/TicketTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/repositories/TicketRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/repositories/TicketTypeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/services/ITicketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/services/ITicketTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/services/clients/EventFallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/services/clients/EventFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/services/impl/TicketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/services/impl/TicketTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket-service/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="246ca73e-1fd5-4879-b526-6b20bf84d50a" name="Changes" comment="refator and fix bugs">
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identityservice/config/KeycloakConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identityservice/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identityservice/dto/CreateUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/example/identityservice/service/KeycloakUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/controller/OrganizerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/dto/ErrorResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/dto/ResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/dto/event/EventResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/dto/organizer/OrganizerDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/dto/user/CreateUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/entities/Organizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/exceptions/GlobalException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/exceptions/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/exceptions/organizer/OrganizerFoundEmailException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/exceptions/organizer/OrganizerFoundPhoneException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/mapper/OrganizerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/repositories/OrganizerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/services/IOrganizerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/services/clients/EventFallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/services/clients/EventFeignClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/services/clients/UserFeignClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/services/impl/OrganizerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/config/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/config/events-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/config/events-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-service/src/main/java/com/example/discoveryservice/DiscoveryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/src/main/java/com/example/discoveryservice/DiscoveryServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-service/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/event-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/EventServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/EventServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/controllers/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/mapper/event/EventMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/mapper/event/EventMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/dto/eventDto/EventResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/dto/eventDto/EventResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/entities/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/entities/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/services/IEventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/services/IEventService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/services/impl/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/java/com/example/eventservice/services/impl/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/event-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/java/com/example/gatewayservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/java/com/example/gatewayservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/TicketServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/TicketServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/entities/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/entities/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/entities/TicketType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/example/ticketservice/entities/TicketType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/organizer-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/organizer-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/OrganizerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/organizer-service/src/main/java/com/example/organizerservice/OrganizerServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/organizer-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/organizer-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,16 +99,19 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AuthServiceApplication.executor": "Run",
     "Spring Boot.ConfigServiceApplication.executor": "Run",
     "Spring Boot.DiscoveryServiceApplication.executor": "Run",
     "Spring Boot.EventServiceApplication.executor": "Run",
     "Spring Boot.GatewayServiceApplication.executor": "Run",
+    "Spring Boot.IdentityServiceApplication.executor": "Run",
+    "Spring Boot.OrganizerServiceApplication.executor": "Run",
     "Spring Boot.TicketServiceApplication.executor": "Run",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "openjdk-22",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Download/marketing/lombok.jar",
+    "last_opened_file_path": "D:/projects/spring/ms-event-app/organizer-service/src/main/java/com/example/organizerservice/dto",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -139,10 +131,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\spring\ms-event-app\organizer-service\src\main\java\com\example\organizerservice\dto" />
+      <recent name="D:\projects\spring\ms-event-app\organizer-service\src\main\java\com\example\organizerservice\exceptions" />
       <recent name="D:\projects\spring\ms-event-app\ticket-service\src\main\java\com\example\ticketservice\dto" />
       <recent name="D:\projects\spring\ms-event-app\config-service\src\main\resources\config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.organizerservice.dto.user" />
+      <recent name="com.example.organizerservice.dto.event" />
+      <recent name="com.example.organizerservice.services.clients" />
       <recent name="com.example.ticketservice.dto.clients" />
       <recent name="com.example.ticketservice.exceptions" />
     </key>
@@ -155,7 +152,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DiscoveryServiceApplication">
+  <component name="RunManager" selected="Spring Boot.IdentityServiceApplication">
     <configuration name="event-service [compile]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -187,6 +184,13 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="auth-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.authservice.AuthServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConfigServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="config-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.configservice.ConfigServiceApplication" />
@@ -211,6 +215,13 @@
     <configuration name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="gateway-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.gatewayservice.GatewayServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IdentityServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="identity-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.identityservice.IdentityServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -252,7 +263,8 @@
       <workItem from="1735837098353" duration="9342000" />
       <workItem from="1735903462730" duration="2287000" />
       <workItem from="1735906909666" duration="8385000" />
-      <workItem from="1735916924554" duration="18055000" />
+      <workItem from="1735916924554" duration="36334000" />
+      <workItem from="1736020046475" duration="11090000" />
     </task>
     <task id="LOCAL-00001" summary="add event service">
       <option name="closed" value="true" />
@@ -302,7 +314,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735985000194</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add gateway">
+      <option name="closed" value="true" />
+      <created>1735989131185</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735989131185</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refator and fix bugs">
+      <option name="closed" value="true" />
+      <created>1735989192339</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1735989192339</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +343,8 @@
     <MESSAGE value="refactor config service" />
     <MESSAGE value="add docker compose" />
     <MESSAGE value="add gateway" />
-    <option name="LAST_COMMIT_MESSAGE" value="add gateway" />
+    <MESSAGE value="refator and fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="refator and fix bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/events")
 @RequiredArgsConstructor
@@ -45,5 +47,12 @@ public class EventController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(eventResponse);
+    }
+
+    // Link Organizer to Events
+    @PutMapping("/{id}/organizers")
+    public ResponseEntity<Void> linkOrganizerToEvents(@PathVariable Long id, @RequestBody List<Long> organizerIds) {
+        _eventService.linkEventToOrganizers(id, organizerIds);
+        return ResponseEntity.ok().build();
     }
 }

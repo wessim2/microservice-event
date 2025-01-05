@@ -1,4 +1,4 @@
-package com.example.eventservice.entities;
+package com.example.organizerservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
@@ -7,25 +7,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Event {
+public class Organizer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
-    private String description;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    private LocalDateTime date;
-    private String venue;
-    @ManyToOne
-    Category category;
+    private String email;
+    private String phone;
+    private String organization;
+
     @ElementCollection
-    List<Long> organizersId;
+    private List<Long> eventIds= new ArrayList<>();
 }
